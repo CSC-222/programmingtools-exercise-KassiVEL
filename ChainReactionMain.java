@@ -30,53 +30,7 @@ public class ChainReactionMain {
 
         cleanData(wordSets);
 
-        while(true)
-        {
-            int chainLength = 0;
-            int guesses = 0;
-
-            System.out.println("*********************************");
-            System.out.println("*                               *");
-            System.out.println("*       CHAIN REACTION          *");
-            System.out.println("*  CAN YOU COMPLETE THE CHAIN?  *");
-            System.out.println("*                               *");
-            System.out.println("*********************************\n");
-			System.out.println("Tutorial..................press 0");
-            System.out.println("Beginner..................press 1");
-            System.out.println("Pro.......................press 2");
-            System.out.println("Superstar.................press 3");
-            System.out.println("Custom....................press 4\n");
-            System.out.print("SELECT DIFFICULTY: ");
-            int difficulty = new Scanner(System.in).nextInt();
-            switch (difficulty) {
-                case 0:{
-                    chainLength = 3;
-                    guesses = 3;
-                    break;
-                }
-                case 1:{
-                    chainLength = 3;
-                    guesses = 10;
-                    break;
-                }
-                case 2: {
-                    chainLength = 5;
-                    guesses = 15;
-                    break;
-                }
-                case 3: {
-                    chainLength = 7;
-                    guesses = 20;
-                    break;
-                }
-                default: {
-                    System.out.print("Enter Chain Length: ");
-                    chainLength = new Scanner(System.in).nextInt();
-                    System.out.print("Enter Number of Guesses: ");
-                    guesses = new Scanner(System.in).nextInt();
-                    break;
-                }
-            }
+        
 
             ChainReaction c = new ChainReaction(guesses,chainLength, wordSets);
             c.playGame();
